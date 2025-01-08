@@ -1,8 +1,13 @@
 import numpy as np
 import matplotlib.pyplot as plt 
 
-D = 100
-Lx = 300
+
+def calculate_time_step(grid_spacing, diffusivity):
+    return 0.5 * grid_spacing**2 / diffusivity
+
+
+D = 100 #Diffusivity
+Lx = 300 #Domain size
 
 dx = 0.5
 x = np.arange(start=0, stop=Lx, step=dx)
@@ -22,7 +27,7 @@ plt.title("Initial Concentration Profile")
 
 time = 0
 nt = 5000
-dt = 0.5 * dx**2 / D
+dt = calculate_time_step(dx, D)
 dt
 
 for t in range(0, nt):
