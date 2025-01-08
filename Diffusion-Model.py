@@ -8,19 +8,11 @@ dx = 0.5
 x = np.arange(start=0, stop=Lx, step=dx)
 nx = len(x)
 
-whos
-
-x[0]
-x[nx-1]
-x[0:5]
-
 C = np.zeros_like(x)
 C_left = 500
 C_right = 0
 C[x <= Lx//2] = C_left
 C[x > Lx//2] = C_right
-
-C[0:5]
 
 plt.figure()
 plt.plot(x, C, "r")
@@ -43,12 +35,6 @@ plt.plot(x, C, "b")
 plt.xlabel("x")
 plt.ylabel("C")
 plt.title("Final Concentration Profile")
-
-z = np.arange(5)
-z
-
-np.roll(z,-1)
-np.roll(z,1)
 
 
 
